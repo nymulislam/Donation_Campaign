@@ -1,0 +1,30 @@
+.big-image {
+    height: 70vh;
+    width: 92vw;
+    position: relative;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  
+  .background-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("https://i.ibb.co/mb3Z3vn/Banner.png");
+    opacity: 0.2;
+  }
+  
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
