@@ -19,12 +19,12 @@ const Donation = () => {
   }, []);
   return (
     <>
-      <div className="mt-28 grid grid-cols-2 gap-6">
+      <div className="mt-28 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-6">
         {donationsAdded.slice(0, dataLength).map((donation) => (
           <DonationAdded key={donation.id} donation={donation}></DonationAdded>
         ))}
       </div>
-      <div className={dataLength === donationsAdded.length && 'hidden'}>
+      <div className={dataLength >= donationsAdded.length && 'hidden'}>
         <button
           onClick={() => setDataLength(donationsAdded.length)}
           className="btn normal-case text-white text-lg font-medium mt-7 px-8 bg-green-700 hover:bg-green-600 text-center"

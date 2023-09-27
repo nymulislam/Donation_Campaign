@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import { getStoredDonation } from "../Utility/localStorage";
 import { useLoaderData } from "react-router-dom";
@@ -38,10 +38,24 @@ export default function Statistics() {
         setDonatedData(getStoredDonation())
     },[donatedData.length])
     const totalDataLength = useLoaderData()
+
     const data = [
         { name: "Total Donation", value: totalDataLength.length },
         { name: "Your Donation", value: donatedData.length }
       ];
+
+      const isSmallDevice = useMediaQuery('(max-width: 600px)');
+      const isTablet = useMediaQuery('(max-width: 1024px)');
+
+      let outerRadius = 180;
+      
+      if (isTablet){
+        outerRadius = 150;
+      }
+      if (isSmallDevice) {
+        outerRadius = 120;
+      }
+      
   return (
     <Box 
     sx={
@@ -54,12 +68,12 @@ export default function Statistics() {
         }
     }
     >
-    <PieChart className="mx-auto" width={500} height={500}>
+    <PieChart className="mx-auto" width={400} height={400}>
       <Pie
         data={data}
         labelLine={false}
         label={renderCustomizedLabel}
-        outerRadius={180}
+        outerRadius={outerRadius}
         fill="#8884d8"
         dataKey="value"
       >
