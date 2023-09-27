@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import "./App.css";
+import "./Root.css";
 import Navbar from "./components/Navbar/Navbar";
 
-function App() {
+function Root() {
   return (
     <div>
       <Navbar></Navbar>
@@ -11,4 +11,4 @@ function App() {
   );
 }
 
-export default App;
+export default Root;

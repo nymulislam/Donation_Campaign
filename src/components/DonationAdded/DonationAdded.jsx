@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const DonationAdded = ({ donation }) => {
   const {
     imageUrl,
@@ -6,7 +8,7 @@ const DonationAdded = ({ donation }) => {
     textColor,
     textBackgroundColor,
     cardBackgroundColor,
-    price,
+    price, id
   } = donation;
   return (
     <div>
@@ -37,7 +39,9 @@ const DonationAdded = ({ donation }) => {
               ${price}
             </h2>
           </div>
+          <Link to={`/donation/${id}`} className="text-left">
           <button className="btn normal-case text-white mt-5 w-2/3" style={{ backgroundColor: textColor }}>View Details</button>
+          </Link>
         </div>
       </div>
     </div>

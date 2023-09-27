@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import Card from "../Card/Card";
+import Statistics from "../Statistics/Statistics";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -19,10 +20,10 @@ const Home = () => {
       <div className="mt-28 grid grid-cols-4 gap-5">
         {cards.map((card) => (
           <Card key={card.id} card={card}></Card>
-        ))}
+          ))}
       </div>
     </>
   );
 };
 
-export default Home;
+export default Home
